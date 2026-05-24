@@ -120,7 +120,7 @@ for (char in 0...3)
 	weekCharacterThing.antialiasing = true;    
 	switch (weekCharacterThing.character)    
 	{    
-		case 'dad':    
+		case 'dad':
 			weekCharacterThing.setGraphicSize(Std.int(weekCharacterThing.width * 0.5));    
 			weekCharacterThing.updateHitbox();    
 
@@ -134,7 +134,7 @@ for (char in 0...3)
 		case 'pico':    
 			weekCharacterThing.y += 170;    
 			weekCharacterThing.flipX = true;    
-			weekCharacterThing.x -= 40;    
+			weekCharacterThing.x += 40;    
 	}    
 
 	grpWeekCharacters.add(weekCharacterThing);    
@@ -195,10 +195,10 @@ override function update(elapsed:Float)
 
 if (curWeek == 3)  
 {  
-	grpWeekCharacters.members[0].flipX = true;  
+	grpWeekCharacters.members[0].flipX = true;
 	grpWeekCharacters.members[0].scale.x = 0.7;  
 	grpWeekCharacters.members[0].scale.y = 0.7;  
-}else{  
+}else{
 	grpWeekCharacters.members[0].flipX = false;  
 	grpWeekCharacters.members[0].scale.x = 0.5;  
 	grpWeekCharacters.members[0].scale.y = 0.5;  
