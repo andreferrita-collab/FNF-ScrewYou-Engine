@@ -18,21 +18,28 @@ class Boyfriend extends Character
 
 	override function update(elapsed:Float)
 	{
-		if (animation.curAnim.name.startsWith('sing'))
+		if (animation.curAnim != null && animation.curAnim.name.startsWith('sing'))
 		{
 			holdTimer += elapsed;
 		}
 		else
-			holdTimer = 0;
-
-		if (animation.curAnim.name.endsWith('miss') && animation.curAnim.finished && !debugMode)
 		{
-			playAnim('idle', true, false, 10);
+			holdTimer = 0;
 		}
 
-		if (animation.curAnim.name == 'firstDeath' && animation.curAnim.finished)
+		if (animation.curAnim != null &&
+			animation.curAnim.name.endsWith('miss') &&
+			animation.curAnim.finished &&
+			!debugMode)
 		{
-			playAnim('deathLoop');
+			playAnim('idle', true);
+		}
+
+		if (animation.curAnim != null &&
+			animation.curAnim.name == 'firstDeath' &&
+			animation.curAnim.finished)
+		{
+			playAnim('deathLoop', true);
 		}
 
 		super.update(elapsed);
