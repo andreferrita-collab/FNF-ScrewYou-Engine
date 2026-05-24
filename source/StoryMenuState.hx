@@ -191,6 +191,9 @@ override function create()
 
 override function update(elapsed:Float)  
 {  
+	for (i in 0...grpWeekCharacters.members.length)
+	{
+		
 	if (curWeek == 3)
 	{
 		grpWeekCharacters.members[i].flipX = true;
@@ -201,6 +204,7 @@ override function update(elapsed:Float)
 		grpWeekCharacters.members[i].scale.x -= 0.4;
 		grpWeekCharacters.members[i].scale.y -= 0.4;
 	}
+}
 	// scoreText.setFormat('VCR OSD Mono', 32);  
 	lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.5));  
 
