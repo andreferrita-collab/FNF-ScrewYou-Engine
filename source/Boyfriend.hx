@@ -32,7 +32,7 @@ class Boyfriend extends Character
 			animation.curAnim.finished &&
 			!debugMode)
 		{
-			playAnim('idle', true);
+			playAnim('firstDeath', true);
 		}
 
 		if (animation.curAnim != null &&
