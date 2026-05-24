@@ -42,26 +42,6 @@ class FreeplayState extends MusicBeatState
 		isDebug = true;
 		#end
 
-		if (StoryMenuState.weekUnlocked[2] || isDebug)
-		{
-			songs.push('Spookeez');
-			songs.push('South');
-		}
-
-		if (StoryMenuState.weekUnlocked[3] || isDebug)
-		{
-			songs.push('Pico');
-			songs.push('Philly');
-			songs.push('Blammed');
-		}
-
-		if (StoryMenuState.weekUnlocked[4] || isDebug)
-		{
-			songs.push('Satin-Panties');
-			songs.push('High');
-			songs.push('Milf');
-		}
-
 		// LOAD MUSIC
 
 		// LOAD CHARACTERS
@@ -211,9 +191,6 @@ class FreeplayState extends MusicBeatState
 
 	function changeSelection(change:Int = 0)
 	{
-		#if !switch
-		NGio.logEvent('Fresh');
-		#end
 
 		// NGio.logEvent('Fresh');
 		FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt, 0.4);
