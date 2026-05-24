@@ -101,7 +101,7 @@ class PlayState extends MusicBeatState
 
 	var defaultCamZoom:Float = 1.05;
 
-	override dynamic public function create()
+	override public function create()
 	{
 		// var gameCam:FlxCamera = FlxG.camera;
 		camGame = new FlxCamera();
@@ -111,7 +111,7 @@ class PlayState extends MusicBeatState
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camHUD);
 
-		FlxCamera.set_defaultCameras = [camGame];
+		FlxG.cameras.set_defaultDrawTarget(camGame);
 
 		persistentUpdate = true;
 		persistentDraw = true;
