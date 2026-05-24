@@ -108,8 +108,8 @@ class Character extends FlxSprite
 
 			case "pico":
 				frames = FlxAtlasFrames.fromSparrow(
-					basePath + "Pico_FNF_assets.png",
-					basePath + "Pico_FNF_assets.xml"
+					basePath + "Pico_FNF_assetss.png",
+					basePath + "Pico_FNF_assetss.xml"
 				);
 
 				animation.addByPrefix('idle', "Pico Idle Dance", 24);
