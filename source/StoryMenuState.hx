@@ -129,11 +129,8 @@ for (char in 0...3)
 			weekCharacterThing.updateHitbox();    
 			weekCharacterThing.x -= 80;    
 		case 'gf':    
-			weekCharacterThing.setGraphicSize(Std.int(weekCharacterThing.width * 0.1));    
-			weekCharacterThing.updateHitbox();    
-		case 'pico':
-		    weekCharacterThing.x = (FlxG.width * 0.75) - (weekCharacterThing.width / 2);
-            weekCharacterThing.y = 140;
+			weekCharacterThing.setGraphicSize(Std.int(weekCharacterThing.width * 0.5));    
+			weekCharacterThing.updateHitbox();
 	}    
 
 	grpWeekCharacters.add(weekCharacterThing);    
@@ -196,7 +193,13 @@ if (curWeek == 3)
 {  
 	grpWeekCharacters.members[0].flipX = true;
 	grpWeekCharacters.members[0].scale.x = 0.7;  
-	grpWeekCharacters.members[0].scale.y = 0.7;  
+	grpWeekCharacters.members[0].scale.y = 0.7; 
+	switch (weekCharacterThing.character)    
+	{    
+	case 'pico':
+		    weekCharacterThing.x = (FlxG.width * 0.75) - (weekCharacterThing.width / 2);
+            weekCharacterThing.y = 140;
+	}
 }else{
 	grpWeekCharacters.members[0].flipX = false;  
 	grpWeekCharacters.members[0].scale.x = 0.5;  
