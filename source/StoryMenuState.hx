@@ -134,7 +134,7 @@ for (char in 0...3)
 		case 'pico':    
 			weekCharacterThing.y += 200;    
 			weekCharacterThing.flipX = true;    
-			weekCharacterThing.x _= 40;    
+			weekCharacterThing.x -= 40;    
 	}    
 
 	grpWeekCharacters.add(weekCharacterThing);    
