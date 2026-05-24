@@ -30,8 +30,7 @@ class Character extends FlxSprite
 			case 'gf':
 
 				var gfTex = FlxAtlasFrames.fromSparrow(
-					AssetPaths.images_characters_GF_assets__png,
-					AssetPaths.images_characters_GF_assets__xml
+					"assets/images/characters/GF_assets.png","assets/images/characters/GF_assets.xml"
 				);
 
 				frames = gfTex;
