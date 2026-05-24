@@ -134,6 +134,8 @@ override function create()
 			case 'pico':  
 				weekCharacterThing.y += 170;  
 				weekCharacterThing.flipX = true;  
+				weekCharacterThing.scale.y = 0.7;
+				weekCharacterThing.scale.x = 0.7;  
 				weekCharacterThing.x -= 40;  
 		}  
 
@@ -190,21 +192,7 @@ override function create()
 }  
 
 override function update(elapsed:Float)  
-{
-	for (i in 0...grpWeekCharacters.members.length)
 	{
-		
-	if (curWeek == 3)
-	{
-		grpWeekCharacters.members[i].flipX = true;
-		grpWeekCharacters.members[i].scale.x = 1.4;
-		grpWeekCharacters.members[i].scale.y = 1.4;
-	}else{
-		grpWeekCharacters.members[i].flipX = false;
-		grpWeekCharacters.members[i].scale.x = 1.0;
-		grpWeekCharacters.members[i].scale.y = 1.0;
-	}
-	}
 	// scoreText.setFormat('VCR OSD Mono', 32);  
 	lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.5));  
 
