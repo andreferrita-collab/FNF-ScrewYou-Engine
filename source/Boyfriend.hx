@@ -9,7 +9,7 @@ using StringTools;
 class Boyfriend extends Character
 {
 	public var stunned:Bool = false;
-	var path:String = "assets/images/characters/"
+	var path:String = "assets/images/characters/";
 
 	public function new(x:Float, y:Float)
 	{
