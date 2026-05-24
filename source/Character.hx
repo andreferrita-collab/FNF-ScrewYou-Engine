@@ -169,24 +169,6 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case "bf":
-				frames = FlxAtlasFrames.fromSparrow(
-					basePath + "BOYFRIEND.png",
-					basePath + "BOYFRIEND.xml"
-				);
-
-				animation.addByPrefix('idle', 'BF idle dance', 24, false);
-				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-
-				addOffset('idle', -5);
-				addOffset("singUP", -29, 27);
-				addOffset("singRIGHT", -38, -7);
-				addOffset("singLEFT", 12, -6);
-				addOffset("singDOWN", -10, -50);
-
-				playAnim('idle');
 		}
 	}
 
