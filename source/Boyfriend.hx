@@ -9,13 +9,13 @@ using StringTools;
 class Boyfriend extends Character
 {
 	public var stunned:Bool = false;
-	var path:String = "assets/images/characters/";
+	var bfpath:String = "assets/images/characters/";
 
 	public function new(x:Float, y:Float)
 	{
 		super(x, y);
 
-		var tex = FlxAtlasFrames.fromSparrow(path + "BOYFRIEND.png", path + "BOYFRIEND.xml");
+		var tex = FlxAtlasFrames.fromSparrow(bfpath + "BOYFRIEND.png", bfpath + "BOYFRIEND.xml");
 		frames = tex;
 		animation.addByPrefix('idle', 'BF idle dance', 24, false);
 		animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
