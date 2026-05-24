@@ -41,33 +41,31 @@ class Conductor
 	public static function changeBPM(newBpm:Float)
 	{
 		bpm = newBpm;
-
 		recalculateTimings();
 	}
 
 	public static function recalculateTimings()
 	{
 		crochet = (60 / bpm) * 1000;
-
 		stepCrochet = crochet / 4;
-
 		safeZoneOffset = (safeFrames / 60) * 1000;
 	}
 
+	// FIX
 	public static function mapBPMChanges(song:Dynamic)
 	{
 		bpmChangeMap = [];
 
 		var curBPM:Float = song.bpm;
-
 		var totalSteps:Int = 0;
-
 		var totalPos:Float = 0;
 
-		for (section in song.notes)
+		// Array FIX
+		var notes:Array<Dynamic> = cast song.notes;
+
+		for (section in notes)
 		{
-			if (section.changeBPM
-				&& section.bpm != curBPM)
+			if (section.changeBPM && section.bpm != curBPM)
 			{
 				curBPM = section.bpm;
 
@@ -85,8 +83,7 @@ class Conductor
 
 			totalSteps += deltaSteps;
 
-			totalPos += ((60 / curBPM) * 1000 / 4)
-				* deltaSteps;
+			totalPos += ((60 / curBPM) * 1000 / 4) * deltaSteps;
 		}
 	}
 }
