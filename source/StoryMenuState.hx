@@ -193,13 +193,13 @@ override function update(elapsed:Float)
 {  
 	if (curWeek == 3)
 	{
-		grpWeekCharacters.flipX = true;
-		grpWeekCharacters.scale.x += 0.4;
-		grpWeekCharacters.scale.y += 0.4;
+		grpWeekCharacters.members[i].flipX = true;
+		grpWeekCharacters.members[i].scale.x += 0.4;
+		grpWeekCharacters.members[i].scale.y += 0.4;
 	}else{
-			grpWeekCharacters.flipX = false;
-		grpWeekCharacters.scale.x -= 0.4;
-		grpWeekCharacters.scale.y -= 0.4;
+		grpWeekCharacters.members[i].flipX = false;
+		grpWeekCharacters.members[i].scale.x -= 0.4;
+		grpWeekCharacters.members[i].scale.y -= 0.4;
 	}
 	// scoreText.setFormat('VCR OSD Mono', 32);  
 	lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.5));  
