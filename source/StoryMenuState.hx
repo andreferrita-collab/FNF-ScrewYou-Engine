@@ -129,7 +129,7 @@ for (char in 0...3)
 			weekCharacterThing.updateHitbox();    
 			weekCharacterThing.x -= 80;    
 		case 'gf':    
-			weekCharacterThing.setGraphicSize(Std.int(weekCharacterThing.width * 0.5));    
+			weekCharacterThing.setGraphicSize(Std.int(weekCharacterThing.width * 0.1));    
 			weekCharacterThing.updateHitbox();    
 		case 'pico':
 		    weekCharacterThing.x = (FlxG.width * 0.75) - (weekCharacterThing.width / 2);
