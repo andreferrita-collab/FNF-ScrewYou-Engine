@@ -131,10 +131,9 @@ for (char in 0...3)
 		case 'gf':    
 			weekCharacterThing.setGraphicSize(Std.int(weekCharacterThing.width * 0.5));    
 			weekCharacterThing.updateHitbox();    
-		case 'pico':    
-			weekCharacterThing.y += 200;    
-			weekCharacterThing.flipX = true;    
-			weekCharacterThing.x -= 40;    
+		case 'pico':
+		    weekCharacterThing.x = (FlxG.width * 0.75) - (weekCharacterThing.width / 2);
+            weekCharacterThing.y = 140;
 	}    
 
 	grpWeekCharacters.add(weekCharacterThing);    
