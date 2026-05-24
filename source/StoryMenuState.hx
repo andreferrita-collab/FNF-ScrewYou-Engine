@@ -54,6 +54,24 @@ var rightArrow:FlxSprite;
 
 override function create()  
 {  
+	for (i in 0...grpWeekCharacters.members.length)
+ {
+    var char = grpWeekCharacters.members[i];
+
+    if (char != null)
+    {
+        if (curWeek == 3)
+        {
+            char.flipX = true;
+            char.scale.set(1.4, 1.4);
+        }
+        else
+        {
+            char.flipX = false;
+            char.scale.set(1, 1);
+        }
+    }
+}
 	if (FlxG.sound.music != null)  
 	{  
 		if (!FlxG.sound.music.playing)  
@@ -191,20 +209,6 @@ override function create()
 
 override function update(elapsed:Float)  
 {  
-	for (i in 0...grpWeekCharacters.members.length)
-	{
-		
-	if (curWeek == 3)
-	{
-		grpWeekCharacters.members[i].flipX = true;
-		grpWeekCharacters.members[i].scale.x += 0.4;
-		grpWeekCharacters.members[i].scale.y += 0.4;
-	}else{
-		grpWeekCharacters.members[i].flipX = false;
-		grpWeekCharacters.members[i].scale.x -= 0.4;
-		grpWeekCharacters.members[i].scale.y -= 0.4;
-	}
-}
 	// scoreText.setFormat('VCR OSD Mono', 32);  
 	lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.5));  
 
