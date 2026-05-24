@@ -11,7 +11,7 @@ class Character extends FlxSprite
 	public var debugMode:Bool = false;
 
 	public var isPlayer:Bool = false;
-	public var curCharacter:String = 'bf';
+	public var curCharacter:String = "bf";
 
 	public var holdTimer:Float = 0;
 	private var danced:Bool = false;
@@ -25,15 +25,15 @@ class Character extends FlxSprite
 
 		antialiasing = true;
 
+		var basePath = "assets/images/characters/";
+
 		switch (curCharacter)
 		{
-			case 'gf':
-
-				var gfTex = FlxAtlasFrames.fromSparrow(
-					"assets/images/characters/GF_assets.png","assets/images/characters/GF_assets.xml"
+			case "gf":
+				frames = FlxAtlasFrames.fromSparrow(
+					basePath + "GF_assets.png",
+					basePath + "GF_assets.xml"
 				);
-
-				frames = gfTex;
 
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
 				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
@@ -51,14 +51,11 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-			case 'dad':
-
-				var dadTex = FlxAtlasFrames.fromSparrow(
-					AssetPaths.images_characters_DADDY_DEAREST__png,
-					AssetPaths.images_characters_DADDY_DEAREST__xml
+			case "dad":
+				frames = FlxAtlasFrames.fromSparrow(
+					basePath + "DADDY_DEAREST.png",
+					basePath + "DADDY_DEAREST.xml"
 				);
-
-				frames = dadTex;
 
 				animation.addByPrefix('idle', 'Dad idle dance', 24);
 				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24);
@@ -68,14 +65,11 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
-			case 'spooky':
-
-				var spookyTex = FlxAtlasFrames.fromSparrow(
-					AssetPaths.images_characters_spooky_kids_assets__png,
-					AssetPaths.images_characters_spooky_kids_assets__xml
+			case "spooky":
+				frames = FlxAtlasFrames.fromSparrow(
+					basePath + "spooky_kids_assets.png",
+					basePath + "spooky_kids_assets.xml"
 				);
-
-				frames = spookyTex;
 
 				animation.addByPrefix('singUP', 'spooky UP NOTE', 24, false);
 				animation.addByPrefix('singDOWN', 'spooky DOWN note', 24, false);
@@ -84,14 +78,11 @@ class Character extends FlxSprite
 
 				playAnim('singLEFT');
 
-			case 'mom':
-
-				var momTex = FlxAtlasFrames.fromSparrow(
-					AssetPaths.images_characters_Mom_Assets__png,
-					AssetPaths.images_characters_Mom_Assets__xml
+			case "mom":
+				frames = FlxAtlasFrames.fromSparrow(
+					basePath + "Mom_Assets.png",
+					basePath + "Mom_Assets.xml"
 				);
-
-				frames = momTex;
 
 				animation.addByPrefix('idle', "Mom Idle", 24, false);
 				animation.addByPrefix('singUP', "Mom Up Pose", 24, false);
@@ -101,14 +92,11 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
-			case 'monster':
-
-				var monsterTex = FlxAtlasFrames.fromSparrow(
-					AssetPaths.images_characters_Monster_Assets__png,
-					AssetPaths.images_characters_Monster_Assets__xml
+			case "monster":
+				frames = FlxAtlasFrames.fromSparrow(
+					basePath + "Monster_Assets.png",
+					basePath + "Monster_Assets.xml"
 				);
-
-				frames = monsterTex;
 
 				animation.addByPrefix('idle', 'monster idle', 24);
 				animation.addByPrefix('singUP', 'monster up note', 24, false);
@@ -118,14 +106,11 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
-			case 'pico':
-
-				var picoTex = FlxAtlasFrames.fromSparrow(
-					AssetPaths.images_characters_Pico_FNF_assetss__png,
-					AssetPaths.images_characters_Pico_FNF_assetss__xml
+			case "pico":
+				frames = FlxAtlasFrames.fromSparrow(
+					basePath + "Pico_FNF_assets.png",
+					basePath + "Pico_FNF_assets.xml"
 				);
-
-				frames = picoTex;
 
 				animation.addByPrefix('idle', "Pico Idle Dance", 24);
 				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
@@ -144,14 +129,11 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
-			case 'bf':
-
-				var bfTex = FlxAtlasFrames.fromSparrow(
-					AssetPaths.images_characters_BOYFRIEND__png,
-					AssetPaths.images_characters_BOYFRIEND__xml
+			case "bf":
+				frames = FlxAtlasFrames.fromSparrow(
+					basePath + "BOYFRIEND.png",
+					basePath + "BOYFRIEND.xml"
 				);
-
-				frames = bfTex;
 
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
@@ -169,12 +151,9 @@ class Character extends FlxSprite
 
 		if (curCharacter != 'bf')
 		{
-			if (animation.curAnim != null)
+			if (animation.curAnim != null && animation.curAnim.name.startsWith('sing'))
 			{
-				if (animation.curAnim.name.startsWith('sing'))
-				{
-					holdTimer += elapsed;
-				}
+				holdTimer += elapsed;
 			}
 		}
 	}
@@ -183,14 +162,9 @@ class Character extends FlxSprite
 	{
 		switch (curCharacter)
 		{
-			case 'gf':
-
+			case "gf":
 				danced = !danced;
-
-				if (danced)
-					playAnim('danceRight');
-				else
-					playAnim('danceLeft');
+				playAnim(danced ? 'danceRight' : 'danceLeft');
 
 			default:
 				playAnim('idle');
@@ -203,8 +177,8 @@ class Character extends FlxSprite
 
 		if (animOffsets.exists(name))
 		{
-			var daOffset = animOffsets.get(name);
-			offset.set(daOffset[0], daOffset[1]);
+			var o = animOffsets.get(name);
+			offset.set(o[0], o[1]);
 		}
 	}
 
@@ -212,4 +186,4 @@ class Character extends FlxSprite
 	{
 		animOffsets[name] = [x, y];
 	}
-}
+		}
